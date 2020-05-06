@@ -18,11 +18,12 @@ Or install it yourself as:
     $ gem install easy_server_timing
 
 ## Usage
-
+options
 ```ruby
 Rails.application.configure do
   config.easy_server_timing.enabled = true
-  config.easy_server_timing.easy_server_timing_rails_environments = ['development']
+  config.easy_server_timing.rails_environments = ['development']
+  config.easy_server_timing.notification_pattern = /.*/
 end
 ```
 
