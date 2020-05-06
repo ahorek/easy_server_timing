@@ -11,8 +11,8 @@ module EasyServerTiming
     end
 
     def correct_environment?(app)
-      if app.config.easy_server_timing.easy_server_timing_rails_environments
-        app.config.easy_server_timing.easy_server_timing_rails_environments.include?(Rails.env.to_s)
+      if app.config.easy_server_timing.rails_environments
+        app.config.easy_server_timing.rails_environments.include?(Rails.env.to_s)
       else
         true
       end
@@ -21,6 +21,6 @@ module EasyServerTiming
     config.easy_server_timing = ActiveSupport::OrderedOptions.new
     config.easy_server_timing.enabled = true
     config.easy_server_timing.notification_pattern = EasyServerTiming.notification_pattern
-    config.easy_server_timing.easy_server_timing_rails_environments = nil
+    config.easy_server_timing.rails_environments = nil
   end
 end
