@@ -19,10 +19,12 @@ Or install it yourself as:
 
 ## Usage
 
+```ruby
 Rails.application.configure do
   config.easy_server_timing.enabled = true
   config.easy_server_timing.easy_server_timing_rails_environments = ['development']
 end
+```
 
 ## License
 
