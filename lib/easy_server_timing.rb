@@ -1,8 +1,13 @@
 # frozen_string_literal: true
 
 module EasyServerTiming
-  cattr_accessor :notification_pattern
-  self.notification_pattern = /^(?!request).*$/
+  def self.notification_pattern
+    @notification_pattern || /^(?!request).*$/
+  end
+
+  def self.notification_pattern=(pattern)
+    @notification_pattern = pattern
+  end
 
   def self.rails?
     defined? Rails::Railtie

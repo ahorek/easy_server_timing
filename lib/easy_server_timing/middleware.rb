@@ -24,7 +24,7 @@ module EasyServerTiming
       end
 
       header_info = events.group_by(&:name).map do |event_name, events_collection|
-        "#{event_name};desc=\\\"#{event_name}\\\";dur=#{events_collection.sum { |e| e.duration.to_f.round }}"
+        "#{event_name};dur=#{events_collection.sum { |e| e.duration.to_f }}"
       end
       headers[SERVER_TIMING_HEADER] = header_info.join(",")
 
